@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace Patterns
 {
 	[RequireComponent (typeof (Rigidbody))]
 	public class Bullet : MonoBehaviour {
 
-		private Rigidbody rigidbody;
+		private new Rigidbody rigidbody;
 
 		private void Awake () 
 		{

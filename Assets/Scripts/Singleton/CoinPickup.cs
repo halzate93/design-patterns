@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 
-public class CoinPickup : MonoBehaviour 
+namespace Patterns
 {
-	public string coinTag;
-	public int pointsPerCoin;
-
-	private void OnTriggerEnter2D (Collider2D other)
+	public class CoinPickup : MonoBehaviour 
 	{
-		if (other.CompareTag (coinTag))
+		public string coinTag;
+		public int pointsPerCoin;
+
+		private void OnTriggerEnter2D (Collider2D other)
 		{
-			Score.Instance.AddPoints (pointsPerCoin);
-			Destroy (other.gameObject);
+			if (other.CompareTag (coinTag))
+			{
+				Score.Instance.AddPoints (pointsPerCoin);
+				Destroy (other.gameObject);
+			}
 		}
 	}
 }

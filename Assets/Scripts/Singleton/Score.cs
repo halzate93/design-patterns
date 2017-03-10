@@ -1,31 +1,34 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour 
+namespace Patterns
 {
-	public Text label;
-
-	public int Points
+	public class Score : MonoBehaviour 
 	{
-		get; private set;
-	}
+		public Text label;
 
-	public static Score Instance
-	{
-		get; private set;
-	}
+		public int Points
+		{
+			get; private set;
+		}
 
-	private void Awake ()
-	{
-		if (Instance != null)
-			Destroy (gameObject);
-		else
-			Instance = this;
-	}
+		public static Score Instance
+		{
+			get; private set;
+		}
 
-	public void AddPoints (int points)
-	{
-		Points += points;
-		label.text = Points.ToString ();
+		private void Awake ()
+		{
+			if (Instance != null)
+				Destroy (gameObject);
+			else
+				Instance = this;
+		}
+
+		public void AddPoints (int points)
+		{
+			Points += points;
+			label.text = Points.ToString ();
+		}
 	}
 }
