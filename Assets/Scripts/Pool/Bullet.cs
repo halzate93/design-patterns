@@ -3,8 +3,9 @@
 namespace Patterns
 {
 	[RequireComponent (typeof (Rigidbody))]
-	public class Bullet : MonoBehaviour {
-
+	public class Bullet : MonoBehaviour 
+	{
+		public float damage = 20f;
 		private new Rigidbody rigidbody;
 
 		private void Awake () 
